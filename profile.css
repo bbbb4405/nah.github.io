@@ -32,6 +32,7 @@ body {
 
 .card-list .card-item {
   list-style: none;
+  display: flex;
 }
 
 .card-list .card-item .card-link {
@@ -47,7 +48,7 @@ body {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: 0.2s ease;
   height: 100%;
-  min-height: 400px; /* chiều cao cố định */
+  min-height: 420px;
 }
 
 .card-list .card-item .card-link:hover {
@@ -106,10 +107,21 @@ body {
   font-weight: 600;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* chỉ hiển thị 2 dòng */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 3.2em; /* tạo độ cao cố định cho tiêu đề */
+  min-height: 3.2em;
+}
+
+.card-list .card-link p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
 }
 
 .card-list .card-link .card-button {
@@ -157,7 +169,7 @@ body {
   }
 }
 
-/* Profile Card (Không thay đổi nhiều phần này nếu không liên quan) */
+/* Profile Card */
 
 .main {
   background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
