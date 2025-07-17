@@ -29,8 +29,7 @@ body {
 }
 
 .card-list .card-item .card-link {
-  display: flex;
-  flex-direction: column;
+  display: block;
   background: #fff;
   padding: 18px;
   user-select: none;
@@ -39,8 +38,6 @@ body {
   border: 2px solid transparent;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: 0.2s ease;
-  height: 380px; /* Tăng chiều cao cố định cho tất cả card */
-  width: 100%;
 }
 
 .card-list .card-item .card-link:hover {
@@ -53,10 +50,9 @@ body {
 
 .card-list .card-link .card-image {
   width: 100%;
-  height: 200px; /* Tăng chiều cao cố định cho hình ảnh */
   border-radius: 10px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  flex-shrink: 0; /* Không cho phép co lại */
 }
 
 .card-list .card-link .badge {
@@ -66,7 +62,6 @@ body {
   border-radius: 50px;
   font-weight: 500;
   margin: 16px 0 18px;
-  flex-shrink: 0; /* Không cho phép co lại */
 }
 
 .badge-designer {
@@ -98,13 +93,6 @@ body {
   color: #000;
   font-size: 1.19rem;
   font-weight: 600;
-  flex-grow: 1; /* Cho phép tiêu đề chiếm không gian còn lại */
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.4;
 }
 
 .card-list .card-link .card-button {
@@ -118,8 +106,6 @@ body {
   border: 2px solid #5372F0;
   transform: rotate(-45deg);
   transition: 0.4s ease;
-  flex-shrink: 0; /* Không cho phép co lại */
-  align-self: flex-start; /* Căn về bên trái */
 }
 
 .card-list .card-link:hover .card-button {
@@ -150,14 +136,6 @@ body {
 
   .card-wrapper .swiper-slide-button {
     display: none;
-  }
-  
-  .card-list .card-item .card-link {
-    height: 350px; /* Tăng chiều cao trên mobile */
-  }
-  
-  .card-list .card-link .card-image {
-    height: 180px; /* Tăng chiều cao hình ảnh trên mobile */
   }
 }
 
