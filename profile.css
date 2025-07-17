@@ -24,12 +24,20 @@ body {
   overflow: hidden;
 }
 
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 .card-list .card-item {
   list-style: none;
 }
 
 .card-list .card-item .card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fefefe;
   padding: 18px;
   user-select: none;
@@ -38,6 +46,8 @@ body {
   border: 2px solid transparent;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: 0.2s ease;
+  height: 100%;
+  min-height: 400px; /* chiều cao cố định */
 }
 
 .card-list .card-item .card-link:hover {
@@ -53,6 +63,7 @@ body {
   border-radius: 10px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .card-list .card-link .badge {
@@ -93,6 +104,12 @@ body {
   color: #000;
   font-size: 1.19rem;
   font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* chỉ hiển thị 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.2em; /* tạo độ cao cố định cho tiêu đề */
 }
 
 .card-list .card-link .card-button {
@@ -106,6 +123,7 @@ body {
   border: 2px solid #5372F0;
   transform: rotate(-45deg);
   transition: 0.4s ease;
+  align-self: flex-end;
 }
 
 .card-list .card-link:hover .card-button {
@@ -138,6 +156,8 @@ body {
     display: none;
   }
 }
+
+/* Profile Card (Không thay đổi nhiều phần này nếu không liên quan) */
 
 .main {
   background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
