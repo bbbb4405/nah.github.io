@@ -81,22 +81,29 @@ body {
   transition: transform 0.25s linear;
 }
 
-.card .front-view,
-.card .back-view {
-  width: 100%;
-  height: 100%;
+.card .front-view {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card .front-view img,
-.card .back-view img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
+.card .front-view .question-mark {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  user-select: none;
 }
 
 .card .back-view {
   transform: rotateY(-180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
 }
 
 .card.flip .back-view {
@@ -112,11 +119,27 @@ body {
     height: 350px;
     width: 350px;
   }
+  
+  .card .front-view .question-mark {
+    font-size: 36px;
+  }
+  
+  .card .back-view {
+    font-size: 28px;
+  }
 }
 
 @media screen and (max-width: 530px) {
   .cards {
     height: 300px;
     width: 300px;
+  }
+  
+  .card .front-view .question-mark {
+    font-size: 30px;
+  }
+  
+  .card .back-view {
+    font-size: 24px;
   }
 }
